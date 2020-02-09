@@ -38,7 +38,8 @@ def binary_search(arr, num, search_first):
     high = len(arr) - 1
     result = -1
     while low <= high:
-        mid = (high + low) // 2
+        # mid = (high + low) // 2
+        mid = low + (high - low) // 2
         if arr[mid] == num:
             result = mid
             if search_first:
