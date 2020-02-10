@@ -1,29 +1,21 @@
-# 2) Take integer inputs from user until he/she presses q ( Ask to press q to quit after every integer input ).
-# Print average and product of all numbers.
+# Write a Python function that accepts a string and calculate the number of upper case letters and lower case letters.
+
+
+def calculate_value():
+    upper = 0
+    lower = 0
+    input_str = input("Please enter the string :")
+    for i in input_str:
+        if i.isupper():
+            upper += 1
+        elif i.islower():
+            lower += 1
+    return upper, lower
 
 
 def input_output():
-    sum_value = 0
-    product = 1
-    count = 0
-    while True:
-        input_value = input("Please enter an integer or press q to quit")
-        if input_value == 'q':
-            break
-        else:
-            try:
-                sum_value = sum_value + int(input_value)
-                product = product * int(input_value)
-                count = count + 1
-            except:
-                print("Invalid Input")
-                break
-    print("The average of the inputted numbers is :", average(sum_value, count))
-    print("The product of the inputted numbers is :", product)
-
-
-def average(x, y):
-    return x / y
+    a, b = calculate_value()
+    print("Number of upper case characters are %d & number of lower case characters are %d" % (a, b))
 
 
 input_output()

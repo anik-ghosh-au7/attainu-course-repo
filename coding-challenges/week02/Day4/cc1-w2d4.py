@@ -1,19 +1,29 @@
-# 1) Write a program to find greatest common divisor (GCD) or highest common factor (HCF) of given two numbers.
-
-num1 = int(input("Please enter the first number :"))
-num2 = int(input("Please enter the second number :"))
+# 2) Take integer inputs from user until he/she presses q ( Ask to press q to quit after every integer input ).
+# Print average and product of all numbers.
 
 
-def hcf(x, y):
+def input_output():
+    sum_value = 0
+    product = 1
+    count = 0
+    while True:
+        input_value = input("Please enter an integer or press q to quit")
+        if input_value == 'q':
+            break
+        else:
+            try:
+                sum_value = sum_value + int(input_value)
+                product = product * int(input_value)
+                count = count + 1
+            except:
+                print("Invalid Input")
+                break
+    print("The average of the inputted numbers is :", average(sum_value, count))
+    print("The product of the inputted numbers is :", product)
 
-    if x > y:
-        s = y
-    else:
-        s = x
-    for i in range(1, s+1):
-        if x % i == 0 and y % i == 0:
-            value = i
-    return value
+
+def average(x, y):
+    return x / y
 
 
-print("The HCF of %d & %d is %d" % (num1, num2, hcf(num1, num2)))
+input_output()

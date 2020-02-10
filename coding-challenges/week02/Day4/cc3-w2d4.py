@@ -1,21 +1,16 @@
-# Write a Python function that accepts a string and calculate the number of upper case letters and lower case letters.
+# Write a Python function that takes a number as a parameter and check the number is prime or not.
 
 
-def calculate_value():
-    upper = 0
-    lower = 0
-    input_str = input("Please enter the string :")
-    for i in input_str:
-        if i.isupper():
-            upper += 1
-        elif i.islower():
-            lower += 1
-    return upper, lower
+def check_prime(x):
+    if x > 1:
+        for i in range(2, x):
+            if x % i == 0:
+                print(x, "is not a prime number")
+                break
+        else:
+            print(x, "is a prime number")
+    else:
+        print("Please enter a number greater than 1")
 
 
-def input_output():
-    a, b = calculate_value()
-    print("Number of upper case characters are %d & number of lower case characters are %d" % (a, b))
-
-
-input_output()
+check_prime(int(input("Please enter a positive integer :")))
