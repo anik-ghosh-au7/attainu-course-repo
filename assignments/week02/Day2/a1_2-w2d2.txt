@@ -1,0 +1,18 @@
+Assignment 1: 
+
+
+In python the int data type variables are assigned dynamic memory, so it’s value is only limited by the memory available where as for floating type variables have static restricted memory because some decimal fractions can’t be properly represented in computer hardware as base 2 (binary) functions, for e.g.- the decimal fraction 1/10 I.e 0.1 would result in indefinite repeating fraction in base 2, so python stores the approximated value using a binary fraction in the machine and while retrieving it, it only returns a decimal approximation to the true decimal value of the binary approximation actually stored in the machine.
+
+
+Assignment 2: 
+
+
+
+1 GB = 1024 MB
+1 MB = 1024 KB
+1 KB = 1024 bytes
+1 byte = 8 bits
+
+So, 1 GB = (1024*1024*1024*8) bits = 8589934592 bits
+
+So, 1 MB = (1024*1024*8) bits = 8388608 bits
