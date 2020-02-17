@@ -1,0 +1,16 @@
+Is merge sort stable, inplace and find its time complexity?
+
+Ans: The stability of any sorting algorithm depends on the fact that if two objects with equal keys (or values if no keys are associated) appear in the
+same order in the output as they were provided in the input. So merge sort can have a stable implementation depending on the comparision of the elements of
+the left and right arrays in the merge function, so if the implementation of merge sort is done in such a way to provide an ascending output, in this
+scenario when merging back the divided arrays we have to consider the element of the left array and update it in our result array if "=" condition prevails.
+
+We call a sorting algorithm in-place if the extra space used to manipulate the array in order to provide the required output falls within the range of
+O(1) to O(log n), so in case of merge sort there will be log n steps for splitting the arrays into sub arrays and log n pointers to instances of the calling
+function so the space complexity of the extra space would be O(log n * log n) = O(log^2 n) = O(2log n) still up till this stage the the effective extra space is
+O(log n), but for merging we would need an exact array as that of our input to store the merged sub arrays, so the space complexity of the extra space becomes
+O(n + log n) which definitely more than log n, so to conclude merge sort is not an in-place sorting algorithm.
+
+Time complexity of merge sort is O(nlog n) because there will be a total of (log n + 1) number of stages at most in which we will split our array into sub
+arrays, also the running time for a single step operation will be of O(1) so to merge the sub arrays made by dividing the input array of n elements the run
+time will be of O(n), so the total time for merge sort will be of O(n(log n + 1)) = O(nlog n + n) = O(nlog n) + O(n) = O(nlog n)
