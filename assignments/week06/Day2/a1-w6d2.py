@@ -54,11 +54,11 @@ class Queue:
             self.rear -= 1
         return x
 
-    def front_elem(self):
-        if self.front == -1:
-            return None
-        else:
-            return self.queue.head.data
+    # def front_elem(self):
+    #     if self.front == -1:
+    #         return None
+    #     else:
+    #         return self.queue.head.data
 
     # def rear_elem(self):
     #     if self.rear != -1:
@@ -96,12 +96,8 @@ for i in list1.split():
 print()
 print("Input Queue : ", end="")
 que.display()
-print("Front elem of the que i.e the first elem of the input, is the first to come out : ", que.deque().data)
-print()
-print("Modified Queue : ", end="")
-que.display()
 size = que.get_size()
-for i in range(size + 1):
+for i in range(size - 1):
     x = que.deque()
     que.enqueue(x.data)
 print("stack implementation using queue : ", end="")
