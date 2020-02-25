@@ -69,6 +69,12 @@ class Queue:
     #         return True
     #     return False
 
+    def pop(self):
+        return self.deque().data
+
+    def list_append(self, data):
+        return self.enqueue(data)
+
     def get_size(self):
         curr_node = self.queue.head
         count = 0
@@ -98,10 +104,10 @@ print("Input Queue : ", end="")
 que.display()
 size = que.get_size()
 for i in range(size - 1):
-    x = que.deque()
-    que.enqueue(x.data)
+    x = que.pop()
+    que.list_append(x)
 print("stack implementation using queue : ", end="")
 que.display()
-print("Now the first element to pop i.e the last element of the queue & the front one of the stack is : ", que.deque().data)
+print("Now the first element to pop from the stack i.e the last element of the queue is : ", que.pop())
 
 
