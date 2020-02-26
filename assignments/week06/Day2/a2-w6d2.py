@@ -49,27 +49,10 @@ class Stack:
         self.curr_size -= 1
         return x
 
-    def peek(self):
-        if self.curr_size <= 0:
-            return None
-        else:
-            return self.stack.end
-
     def isEmpty(self):
         if self.curr_size <= 0:
             return True
         return False
-
-    def display(self):
-        current_node = self.stack.head
-        print("<==>", end="")
-        while current_node:
-            print('\033[46m', current_node.data, '\033[41m', end=" --\033[0m-->")
-            current_node = current_node.next
-        else:
-            print('\033[44m', "None", '\033[0m', end="")
-            print()
-            print()
 
 
 class Queue:
