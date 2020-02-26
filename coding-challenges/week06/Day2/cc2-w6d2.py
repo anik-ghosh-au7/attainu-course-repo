@@ -50,7 +50,7 @@ class Stack:
         self.curr_size -= 1
         return x
 
-    def peak(self):
+    def peek(self):
         if self.curr_size <= 0:
             return None
         else:
@@ -84,6 +84,6 @@ print("First elem to come out of the stack, is the last elem of the input : ", s
 print()
 print("Modified Stack : ", end="")
 stk.display()
-print("Peak Element : ", stk.peak().data)
+print("Peek Element : ", stk.peek().data)
 print()
 print("Stack is empty : ", stk.isEmpty())
