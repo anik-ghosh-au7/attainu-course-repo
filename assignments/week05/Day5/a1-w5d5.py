@@ -9,9 +9,8 @@ class Node:
 
 
 class Pointer:
-    def __init__(self, num):
-        for i in range(1, num+1):
-            self._i = None
+    def __init__(self):
+        self._ = None
 
 
 class LinkedList:
@@ -64,20 +63,20 @@ def ll_add(lis1, lis2):
         for _ in range(diff):
             lis1.push(0)
     carry = 0
-    pn = Pointer(2)
+    pn = Pointer()
     result = LinkedList()
-    pn._1 = lis1.end
-    pn._2 = lis2.end
+    pn.c1 = lis1.end
+    pn.c2 = lis2.end
     for _ in range(lis2.length()):
-        sum_el = pn._1.data + pn._2.data + carry
+        sum_el = pn.c1.data + pn.c2.data + carry
         if sum_el > 9:
             result.push(sum_el % 10)
             carry = sum_el // 10
         else:
             result.push(sum_el)
             carry = 0
-        pn._1 = pn._1.prev
-        pn._2 = pn._2.prev
+        pn.c1 = pn.c1.prev
+        pn.c2 = pn.c2.prev
 
     if carry:
         result.push(carry)
@@ -98,35 +97,35 @@ def ll_diff(lis1, lis2):
         for _ in range(diff):
             lis1.push(0)
     else:
-        pn = Pointer(2)
-        pn._1 = lis1.head
-        pn._2 = lis2.head
-        while pn._1:
-            if pn._1.data > pn._2.data:
+        pn = Pointer()
+        pn.c1 = lis1.head
+        pn.c2 = lis2.head
+        while pn.c1:
+            if pn.c1.data > pn.c2.data:
                 flag = 1
                 break
-            if pn._1.data < pn._2.data:
+            if pn.c1.data < pn.c2.data:
                 flag = 2
                 break
-            pn._1 = pn._1.next
-            pn._2 = pn._2.next
+            pn.c1 = pn.c1.next
+            pn.c2 = pn.c2.next
     result = LinkedList()
     if flag == 0:
         result.push(0)
     else:
-        pn = Pointer(2)
-        pn._1 = lis1.end
-        pn._2 = lis2.end
+        pn = Pointer()
+        pn.c1 = lis1.end
+        pn.c2 = lis2.end
         if flag == 2:
-            pn._1, pn._2 = pn._2, pn._1
-        while pn._1:
-            if pn._1.data >= pn._2.data:
-                result.push(pn._1.data - pn._2.data)
+            pn.c1, pn.c2 = pn.c2, pn.c1
+        while pn.c1:
+            if pn.c1.data >= pn.c2.data:
+                result.push(pn.c1.data - pn.c2.data)
             else:
-                pn._1.prev.data = pn._1.prev.data - 1
-                result.push(pn._1.data + 10 - pn._2.data)
-            pn._1 = pn._1.prev
-            pn._2 = pn._2.prev
+                pn.c1.prev.data = pn.c1.prev.data - 1
+                result.push(pn.c1.data + 10 - pn.c2.data)
+            pn.c1 = pn.c1.prev
+            pn.c2 = pn.c2.prev
     print("Diff output list : ")
     result.printList()
 
