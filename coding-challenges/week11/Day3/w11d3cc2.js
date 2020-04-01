@@ -13,6 +13,6 @@ function quickSort(arr) {
             higher_elms.push(i);
         }
     }
-    return quickSort(lower_elms).concat(pivot,higher_elms);
+    return quickSort(lower_elms).concat(pivot, quickSort(higher_elms));
 }
 console.log(quickSort(arr1));
