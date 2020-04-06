@@ -1,5 +1,5 @@
 function palindrome(str){
-    const regex = /[\W]/;
+    const regex = /[\W]/g;
     let lowerCase = str.toLowerCase().replace(regex, '');
     var reverseStr = lowerCase.split('').reverse().join('');
 
