@@ -1,0 +1,7 @@
+Consider a machine with 64 MB physical memory and a 32-bit virtual address space. If the page size is 4KB, what is the approximate size of the page table?
+
+assuming that single level of Paging is happening
+
+Number of entries in page table = (virtual address space size)/(page size) = 2^32/2^12 = 2^(32-12) = 2^20
+
+Size of page table = (total number of page table entries) *(size of a page table entry) = = (2^20 *2) = 2MB
