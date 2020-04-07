@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Given 2 very very big numbers(10^1000) use doubly linked lists to perform operations on them(+,-)
 
 
@@ -140,3 +141,7 @@ for j in list2:
     l2.append(int(j))
 ll_add(l1, l2)
 ll_diff(l1, l2)
+=======
+# Given 2 very very big numbers(10^1000) use doubly linked lists to perform operations on them(+,-,*,/)
+
+>>>>>>> origin/master
