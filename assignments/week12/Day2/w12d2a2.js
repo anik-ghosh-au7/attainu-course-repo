@@ -1,29 +1,14 @@
-var stack1 = [];
-var stack2 = [];
-
-var enqueue = (elem) => {
-    stack1.push(elem);
-}
-
-var dequeue = () => {
-    if (stack2.length === 0){
-        if (stack1.length === 0){
-            console.log('Queue is empty!!!')
+var fibonnaci = (num) => {
+    var result = [];
+    result[0] = 0;
+    result[1] = 1;
+    if (num > 2){
+        for (let i = 2; i <= num; i++){
+            result[i] = result[i-1] + result[i-2];
         }
-            while (stack1.length > 0) {
-                stack2.push(stack1.pop());
-              }
     }
-    return stack2.pop();
+    return result[num];
 }
 
-
-enqueue(1);
-enqueue(2);
-enqueue(3);
-console.log(dequeue()); // 1
-console.log(dequeue()); // 2
-enqueue(4);
-enqueue(5);
-console.log(dequeue()); // 3
-console.log(dequeue()); // 4
+console.log(fibonnaci(5)); // 5
+console.log(fibonnaci(6)); // 8
