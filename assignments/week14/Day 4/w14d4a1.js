@@ -717,6 +717,6 @@ ids = new Set(input_arr.map(elem => elem.postId));
 // console.log(ids);
 
 for (let id of ids){
-    let result = input_arr.filter(elem => elem.postId === 1).length;
+    let result = input_arr.filter(elem => elem.postId === id).length;
     console.log(`Number of posts of postId ${id} is ${result}`);
 };
