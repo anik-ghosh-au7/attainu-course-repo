@@ -705,7 +705,7 @@ let input_arr = [
 let new_arr = [];
 
 input_arr.forEach(element => {
-    new_arr.push({"id": element.id, "name": element.name});
+    new_arr.push({"postId": element.postId, "body": element.body});
 });
 
 let filtered_arr = input_arr.filter(elem => elem.body.length <= 50);
