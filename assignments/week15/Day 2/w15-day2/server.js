@@ -31,7 +31,7 @@ app.get('/:id', (req, res) => {
     if (found){
         member = members.filter(member => member.id === parseInt(req.params.id));
         name = member.name;
-        res.render('member', {name, member});
+        res.render('member', {member});
     } else {
         res.status(400).json({msg: `No member with the id of ${req.params.id}`});
     }
