@@ -11,5 +11,5 @@ let LargestPair = (num) => {
     return max_num;
 };
 
-console.log(LargestPair(4759472));
-console.log(LargestPair(4759499));
+console.log(LargestPair(4759472)); // 94
+console.log(LargestPair(4759499)); // 99
