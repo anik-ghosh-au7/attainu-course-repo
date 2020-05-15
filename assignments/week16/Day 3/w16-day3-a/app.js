@@ -38,7 +38,7 @@ function error(msg, includeHelp=false) {
 
 function processFile(inStream) {
 
-    let target_stream, target_file, upper_Stream, out_stream;
+    let target_stream, target_file, upper_Stream;
 
     if (args.lorem) {
 
@@ -62,8 +62,8 @@ function processFile(inStream) {
 
     };
 
-    out_stream = inStream.pipe(upper_Stream);
+    inStream.pipe(upper_Stream);
     target_stream = fs.createWriteStream(target_file);
-    out_stream.pipe(target_stream);
+    upper_Stream.pipe(target_stream);
 
 };
