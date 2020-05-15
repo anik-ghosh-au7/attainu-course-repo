@@ -60,10 +60,10 @@ function processFile(inStream) {
             }
         });
 
-    }
+    };
 
     out_stream = inStream.pipe(upper_Stream);
     target_stream = fs.createWriteStream(target_file);
     out_stream.pipe(target_stream);
 
-}
+};
