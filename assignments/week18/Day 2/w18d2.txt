@@ -14,6 +14,12 @@
 
 # INSERT INTO details (branch, account, customer, financial_transaction, loan, deposit) VALUES ('bangalore', 'savings', 'anik ghosh', 'credit', '5000000', '1000000');
 
+# INSERT INTO details (branch, account, customer, financial_transaction, loan, deposit) VALUES ('kolkata', 'savings', 'kumar atul', 'credit', '3000000', '9000000');
+
+# INSERT INTO details (branch, account, customer, financial_transaction, deposit) VALUES ('kolkata', 'savings', 'raghav nayak', 'credit', '2000000');
+
+# INSERT INTO details (branch, account, customer, financial_transaction, deposit) VALUES ('bangalore', 'savings', 'akash dutta', 'credit', '2000000');
+
 5. Retrive all data from table (details)
 
 # SELECT * FROM details;

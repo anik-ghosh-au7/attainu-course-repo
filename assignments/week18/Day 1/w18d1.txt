@@ -1,0 +1,7 @@
+1. Create a database
+
+# CREATE DATABASE bank
+
+2. Connect to database banl
+
+# \c bank
