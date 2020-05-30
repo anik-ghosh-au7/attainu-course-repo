@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const validateTitle = [
     (val) => {
-        return (/^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,20}$/.test(val))
+        return (/^[A-Za-z\s\.][A-Za-z\s\.]{0,20}$/.test(val))
     },
     'Please provide a valid blog title which should be at max 20 characters long and can contain . and blank spaces !!!'
 ];
