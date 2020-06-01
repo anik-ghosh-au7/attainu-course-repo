@@ -1,0 +1,59 @@
+1. Create a database
+
+# CREATE DATABASE Companydb;
+
+2. Connect to database Companydb
+
+# \c companydb
+
+3. Create table companydb
+
+# CREATE TABLE companydb(Id SERIAL PRIMARY KEY, Name VARCHAR(20) NOT NULL, Age INT NOT NULL, PhoneNumber VARCHAR (10), Address TEXT, Salary INT, Created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+4. Insert data into companydb table
+
+# INSERT INTO companydb(Name, Age, PhoneNumber, Address, Salary) values('Anik Ghosh', 30, '9609542219', 'Rajarhat', 50000000);
+
+# INSERT INTO companydb(Name, Age, Address) values('Akash Dutta', 27, 'Barasat');
+
+# INSERT INTO companydb(Name, Age, Address, Salary) values('Raghav Nayak', 22, 'Barasat', 9000000);
+
+# INSERT INTO companydb(Name, Age, PhoneNumber, Salary) values('Kumar Atul', 25, '9999988888', 400000000);
+
+5. Retrive all data from comapnydb
+
+# SELECT * FROM companydb;
+
+6. Create table companydb
+
+# CREATE TABLE department(Id SERIAL PRIMARY KEY, Department VARCHAR(30), emp_id INT NOT NULL, Created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+7. Insert data into department table
+
+# INSERT INTO department(Department, emp_id) values('Operations', 1);
+
+# INSERT INTO department(Department, emp_id) values('Finance', 2);
+
+# INSERT INTO department(Department, emp_id) values('Marketing', 4);
+
+# INSERT INTO department(Department, emp_id) values('Digital', 5);
+
+8. CROSS JOIN with fields emp_id, name, department, phonenumber
+
+# SELECT emp_id, name, department, phonenumber FROM companydb CROSS JOIN department;
+
+9. companydb INNER JOIN department with fields emp_id, name, department, phonenumber 
+
+# SELECT emp_id, name, department, phonenumber FROM companydb INNER JOIN department on department.emp_id = companydb.id;
+
+10. companydb RIGHT JOIN department with fields emp_id, name, department, phonenumber
+
+# SELECT emp_id, name, department, phonenumber FROM companydb LEFT OUTER JOIN department on department.emp_id = companydb.id;
+
+11. companydb LEFT JOIN department with fields emp_id, name, department, phonenumber
+
+# SELECT emp_id, name, department, phonenumber FROM companydb RIGHT OUTER JOIN department on department.emp_id = companydb.id;
+
+12. companydb FULL OUTER JOIN department with fields emp_id, name, department, phonenumber
+
+# SELECT emp_id, name, department, phonenumber FROM companydb FULL OUTER JOIN department on department.emp_id = companydb.id;
