@@ -1,0 +1,59 @@
+1. Create a database Bankdb
+
+# CREATE DATABASE Bankdb;
+
+2. Connect to database bankdb
+
+# \c bankdb
+
+3. Create table user_table
+
+# CREATE TABLE user_table(Id SERIAL PRIMARY KEY, Name VARCHAR(20) NOT NULL, Age INT NOT NULL, PhoneNumber VARCHAR (10), Address TEXT);
+
+4. Insert data into user_table table
+
+# INSERT INTO user_table(Name, Age, PhoneNumber, Address) values('Anik Ghosh', 30, '9609542219', 'Rajarhat');
+
+# INSERT INTO user_table(Name, Age, Address) values('Akash Dutta', 27, 'Barasat');
+
+# INSERT INTO user_table(Name, Age, Address) values('Raghav Nayak', 22, 'Barasat');
+
+# INSERT INTO user_table(Name, Age, PhoneNumber) values('Kumar Atul', 25, '9999988888');
+
+5. Retrive all data from user_table
+
+# SELECT * FROM user_table;
+
+6. Create table account_info
+
+# CREATE TABLE account_info(Id SERIAL PRIMARY KEY, AccountNumber VARCHAR(20) NOT NULL, Balance INT, UserId INT NOT NULL);
+
+7. Insert data into account_info table
+
+# INSERT INTO account_info(AccountNumber, Balance, UserId) values('1234567890', 10005000, 1);
+
+# INSERT INTO account_info(AccountNumber, Balance, UserId) values('1233344890', 2030500, 2);
+
+# INSERT INTO account_info(AccountNumber, UserId) values('1256365690', 3);
+
+# INSERT INTO account_info(AccountNumber, Balance, UserId) values('1232537690', 53632222, 5);
+
+8. CROSS JOIN with fields userid, name, accountnumber, phonenumber
+
+# SELECT userid, name, accountnumber, phonenumber FROM user_table CROSS JOIN account_info;
+
+9. user_table INNER JOIN account_info with fields userid, name, accountnumber, phonenumber
+
+# SELECT userid, name, accountnumber, phonenumber FROM user_table INNER JOIN account_info on user_table.id = account_info.userid;
+
+10. user_table RIGHT JOIN account_info with fields userid, name, accountnumber, phonenumber
+
+# SELECT userid, name, accountnumber, phonenumber FROM user_table RIGHT OUTER JOIN account_info on user_table.id = account_info.userid;
+
+11. user_table LEFT JOIN account_info with fields userid, name, accountnumber, phonenumber
+
+# SELECT userid, name, accountnumber, phonenumber FROM user_table LEFT OUTER JOIN account_info on user_table.id = account_info.userid;
+
+12. user_table FULL OUTER JOIN account_info with fields userid, name, accountnumber, phonenumber
+
+# SELECT userid, name, accountnumber, phonenumber FROM user_table FULL OUTER JOIN account_info on user_table.id = account_info.userid;
