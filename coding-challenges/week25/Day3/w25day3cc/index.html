@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Signup Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post" id="fileForm" role="form">
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label for="firstname"><span class="req">* </span> Name: </label>
+                            <span class="req"><small> required feilds *</small></span>
+                            <input class="form-control" type="text" name="firstname" id="txt" onkeyup="Validate(this)"
+                                required placeholder="only . and space are allowed except characters"/>
+                            <div id="errFirst"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phonenumber"><span class="req">* </span> Phone Number: </label>
+                            <input required type="text" name="phonenumber" id="phone" class="form-control phone"
+                                maxlength="28" onkeyup="validatephone(this);"
+                                placeholder="don't include + or country code" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><span class="req">* </span> Email Address: </label>
+                            <input class="form-control" required type="text" name="email" id="email"
+                                onchange="email_validate(this.value);" />
+                            <div class="status" id="status"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><span class="req">* </span> Password: </label>
+                            <input required name="password" type="password" class="form-control inputpass" minlength="4"
+                                maxlength="16" id="pass1" /> </p>
+
+                            <label for="password"><span class="req">* </span> Password Confirm: </label>
+                            <input required name="password" type="password" class="form-control inputpass" minlength="4"
+                                maxlength="16" placeholder="Enter again to validate" id="pass2"
+                                onkeyup="checkPass(); return false;" />
+
+                            <span id="confirmMessage" class="confirmMessage"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="btn btn-success" type="submit" name="submit_reg" value="Signup">
+                        </div>
+                    </fieldset>
+                </form>
+</body>
+
+</html>
