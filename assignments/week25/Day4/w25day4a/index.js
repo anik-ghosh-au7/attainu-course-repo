@@ -8,14 +8,14 @@ function createContent() {
     
     // method 2
     let parent_div = document.createElement('div')
-    parent_div.classList.add = 'image';
+    parent_div.className = 'image';
 
     let image_elem = document.createElement('img');
     image_elem.src = 'https://goo.gl/kjzfbE';
     image_elem.alt = 'First';
 
     let button_elem = document.createElement('button');
-    button_elem.classList.add = 'remove';
+    button_elem.className = 'remove';
     button_elem.innerText = 'X';
 
     parent_div.appendChild(image_elem);
