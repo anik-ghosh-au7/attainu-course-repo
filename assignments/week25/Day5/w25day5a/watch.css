@@ -40,7 +40,7 @@ body {
     position: relative;
     width: 150px;
     height: 150px;
-    background-image: conic-gradient(#004ffa 0%, #7bd3db 0 100%);
+    background-image: conic-gradient(#ff4800 0%, #7bd3db 0 100%);
     border-radius: 50%;
     margin-top: 10px;
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.5);
@@ -53,6 +53,21 @@ body {
     left: 6.5%;
     width: 130px;
     height: 130px;
+    background-image: conic-gradient(#004ffa 0%, #7bd3db 0 100%);
+    border-radius: 50%;
+    margin-bottom: 50px;
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.5);
+    transition: opacity .3s;
+    padding-top: 15%;
+    font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+.__pie {
+    position: absolute;
+    top: 7%;
+    left: 7.7%;
+    width: 110px;
+    height: 110px;
     background-image: conic-gradient(#ffc750 100%, #cce467 0%);
     border-radius: 50%;
     margin-bottom: 50px;
