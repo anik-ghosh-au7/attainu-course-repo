@@ -11,7 +11,6 @@ $.validator.setDefaults({
         button.id = 'closeDialog';
         button.innerText = 'Close';
         button.addEventListener('click', closeDialogBox());
-        // handleEvent(e);
         $("#newDialog").append(button);
         $("#newDialog")[0].showModal();
       };
@@ -110,8 +109,10 @@ $.validator.addMethod('filesize', function(value, element, param) {
 
 function closeDialogBox() {
   return () => {
-    console.log('button clicked')
-      $('#newDialog')[0].close();
+    console.log('button clicked');
+    $('#response').remove();
+    $('#closeDialog').remove();
+    $('#newDialog')[0].close();
   }
 };
 
