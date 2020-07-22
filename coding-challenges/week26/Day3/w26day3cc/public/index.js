@@ -80,7 +80,7 @@ $.validator.addMethod('filesize', function(value, element, param) {
           minlength: "Your password must be at least 5 characters long",
           equalTo: "Please enter the same password as above"
         },
-        image: "File must be JPG, GIF or PNG, less than 1MB",
+        image: "File must be JPG, GIF or PNG, less than 40MB",
         email: "Please enter a valid email address",
         agree: "Please accept our policy",
         gender: "Please select a gender"
