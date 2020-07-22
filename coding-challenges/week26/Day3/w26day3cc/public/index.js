@@ -2,7 +2,7 @@ $.validator.setDefaults({
   submitHandler: function () {
     let form_data = new FormData($('#signupForm')[0]);
     let http_req = new XMLHttpRequest();
-      http_req.onloadstart = (e) => {
+      http_req.onloadstart = () => {
         console.log('started');
         let responsediv = document.createElement( "div" );
         responsediv.id = 'response';
@@ -19,7 +19,7 @@ $.validator.setDefaults({
         showProgress(e);
       };
       http_req.send(form_data);
-      http_req.onloadend = (e) => {
+      http_req.onloadend = () => {
         console.log(http_req.responseText);
         $('#signupForm')[0].reset();
         $('#response')[0].innerHTML += `<h4>${http_req.responseText}</h4>`;
