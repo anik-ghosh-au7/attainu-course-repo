@@ -10,7 +10,9 @@ userModel.prototype.listProperties = function (){
     };
 };
 
-const userObj = new userModel({name: 'robin', start_date: '01-01-2020', end_date: '30-10-2020'});
+const userObj = {name: 'robin', start_date: '01-01-2020', end_date: '30-10-2020'};
 
-userObj.listProperties();
+const user = new userModel(userObj);
+
+user.listProperties();
 
