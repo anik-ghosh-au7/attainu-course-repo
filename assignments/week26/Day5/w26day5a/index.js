@@ -4,10 +4,8 @@ $( "#target" ).submit(function( event ) {
     window.localStorage.setItem('username', form_data.get('username'));
     window.localStorage.setItem('password', form_data.get('password'));
     if(window.localStorage.getItem('username') === 'robin' && window.localStorage.getItem('password') === 'Robin@123') {
-        console.log('in if')
-        window.open('dashboard.html');
+        window.open('dashboard.html', '_self');
     } else {
-        console.log('in else')
         location.reload();
     };
   });
