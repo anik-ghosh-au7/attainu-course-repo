@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #74ebd5;
+    min-height: 100vh;
+}
+
+#container {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    height: 400px;
+    width: 400px;
+    border: 1px #000000 solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.5);
+    background-color: rgb(1, 14, 75);
+}
+
+#child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    border: 1px #000000 solid;
+    border-radius: 50%;
+    background-color: rgb(255, 133, 52);
+}
