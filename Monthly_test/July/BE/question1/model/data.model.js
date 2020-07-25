@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const dataSchema = new Schema({
     name: String,
     email: String,
-    phone_number: Number,
-    age: Number,
+    phone_number: String,
+    age: String,
     gender: String,
     address: String
 },
