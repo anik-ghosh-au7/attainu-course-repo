@@ -3,7 +3,6 @@ const data_controller = {
     savedata: (result) => {
         
         for (let i =0; i< result.length; i+=6) {
-            if(result[i+6]){
                 let data = new Data({
                     'name': result[i]['r'],
                     'email': result[i+1]['r'],
@@ -14,7 +13,6 @@ const data_controller = {
                 })
                 data.save();
             }
-        }
     }
 };
 
