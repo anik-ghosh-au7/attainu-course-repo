@@ -26,7 +26,7 @@
         <div class="left-bar">
             <h2>About Me</h2>
             <h5>Photo of me:</h5>
-            <img class="img" style="padding: 0; border: 1px solid; border-radius: 10%; height: 200px; width: 180px;" src="https://res.cloudinary.com/dtappasld/image/upload/v1593208750/s9otj8t6h5qpxfmmqylp.png" alt="profile-image">
+            <img id="profile-img" class="img" style="padding: 0; border: 1px solid; border-radius: 10%; height: 200px; width: 180px;" src="https://res.cloudinary.com/dtappasld/image/upload/v1593208750/s9otj8t6h5qpxfmmqylp.png" alt="profile-image"  onmouseover="zoom_in()" onmouseout="zoom_out()">
             <p>Hello my name is Anik Ghosh, and I am a B.E gradutate from Sathyabama University. I am also a PDGM holder and currently learning MERN Stack..</p>
             <h3>Some Projects</h3>
             <p>Project links : </p>
@@ -38,7 +38,7 @@
         <div class="main">
             <h2>Bitcoin Notifier</h2>
             <h5>Posted on : July 25, 2020</h5>
-            <img id="profile-img" class="img" style="padding: 0; border: 1px solid; height: 200px; width: 100%;" src="https://cdn.images.express.co.uk/img/dynamic/22/590x/secondary/Bitcoin-price-estimates-from-coindesk-1115375.png" alt="profile-image" onmouseover="zoom_in()" onmouseout="zoom_out()">
+            <img class="img" style="padding: 0; border: 1px solid; height: 200px; width: 100%;" src="https://cdn.images.express.co.uk/img/dynamic/22/590x/secondary/Bitcoin-price-estimates-from-coindesk-1115375.png" alt="profile-image"">
             <p><em>Description : </em></p>
             <p>In this project my main aim was to build a python module that would be pip installable and will run as a command line tool to fetch live bitcoin prices from CoinMarketCap API and bundle them to send as a message to a public telegram channel and also a notification to my mobile whenever the price falls beyond a particular threshold.
                 <br>Together with this I also tried predicting the closing price of Bitcoin for the next one year by implementing time-series analysis on the closing price data from 1st January 2017 by using the ARIMA (Auto Regressive Intregated Moving Average) model.</p>
@@ -54,6 +54,7 @@
     <div class="footer">
         <h2 class="far fa-copyright"> anik ghosh, 2020</h2>
     </div>
+<script src="index.js"></script>
 </body>
 
 </html>
