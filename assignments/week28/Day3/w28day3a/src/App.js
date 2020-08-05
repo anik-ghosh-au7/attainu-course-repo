@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import _ from 'lodash';
 
-import Login from "./components/login.component";
-import SignUp from "./components/signup.component";
+import routes from './route/index';
 
 function App() {
   return (<Router>
@@ -27,9 +27,13 @@ function App() {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-            <Route exact path='/' component={Login} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
+            {
+              _.map(routes, (route, idx) => {
+                return (
+                  <Route key={idx} {...route}/>
+                )
+              })
+            }
           </Switch>
         </div>
       </div>
