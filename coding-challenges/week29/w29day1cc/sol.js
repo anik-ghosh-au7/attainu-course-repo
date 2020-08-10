@@ -1,4 +1,4 @@
-// Method 1
+// Method 1 O(2) extra space which is equivalent to O(1)
 
 // const removeDuplicates = (arr) => {
 //     let count = 0;
@@ -17,7 +17,7 @@
 //     return arr.length;
 // };
 
-// Method 2
+// Method 2 O(1) extra space
 const removeDuplicates = (arr) => {
     if (arr.length < 2) return arr.length;
     for (let i = 2; i < arr.length; i++) {
