@@ -5,7 +5,7 @@ const binary_sum = (a, b) => {
     if (a.length > b.length) {
         b = '0' * (a.length - b.length) + b;
     } else if (a.length < b.length) {
-        a = '0' * (b.length - a.length) + b;
+        a = '0' * (b.length - a.length) + a;
     }
     
     for(let i=a.length-1; i>=0; i--) {
