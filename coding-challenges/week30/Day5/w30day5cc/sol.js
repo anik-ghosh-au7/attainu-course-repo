@@ -1,6 +1,6 @@
 const valid_binary_tree = (tree) => {
     let i = 0;
-    while (i < tree.length) {
+    while (i < tree.length/2) {
         if(tree[i]) {
             if(tree[2*i+1] && tree[2*i+1]>tree[i]) return false;
             if(tree[2*i+2] && tree[2*i+2]<tree[i]) return false;
