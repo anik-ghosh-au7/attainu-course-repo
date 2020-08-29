@@ -19,5 +19,7 @@ const router = express.Router();
 
 router.get("/postspage", authenticateToken, post_controller.showPosts);
 router.post("/createpost", authenticateToken, post_controller.createPost);
+router.post("/addcomment", authenticateToken, post_controller.addComment);
+router.post("/deletepost", authenticateToken, post_controller.deletePost);
 
 module.exports = router;

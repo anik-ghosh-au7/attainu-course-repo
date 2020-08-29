@@ -51,14 +51,17 @@ const post_controller = {
   },
 
   addComment: (req, res) => {
+    console.log("from add comments --> ", req.body.id, req.body.comment_body);
     Post.findByIdAndUpdate(
       { _id: req.body.id },
       {
         $push: {
-          comments: req.body.comments,
+          Comments: req.body.comment_body,
         },
       }
-    ).then(res.redirect("/posts/postspage"));
+    )
+      .then(res.redirect("/posts/postspage"))
+      .catch((err) => console.log(err));
   },
 };
 

@@ -14,6 +14,16 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <script>
+        window.onload = () => {
+
+            var user_name = document.cookie.split(' ')[1].split('=')[1];
+            console.log(user_name);
+            if (document.getElementById('username')) {
+                var username = document.getElementById('username').innerText;
+                console.log(username);
+            }
+            if (username === user_name) document.getElementById('delete_post').disabled = false;
+        }
     </script>
 
 </head>
@@ -43,8 +53,7 @@
     <div class="container">
         <div class="row"></div><br /><br />
         <div class="row">
-            {{!-- <h1>{{username}}</h1> --}}
-            <!-- Blog Entries Column -->
+
             <div class="col-md-8">
 
                 {{#each posts}}
@@ -62,40 +71,30 @@
                         </span>
 
                     </div>
-                    {{!-- <div class="card-footer text-muted">
+                    <form action="/posts/deletepost" method="post">
+                        <h1 hidden id='username'>{{this.Author}}</h1>
+                        <input type="hidden" name="id" value={{this.id}}>
+                        <input id="delete_post" type="submit" class="btn btn-info" value="Delete Post" disabled>
+                    </form>
 
-                        <span style="font-size: small;">Time : {{this.post.post_time}}</span><br>
-                        <a href="#">By : {{this.post.Author}}</a>
-                        <button class="btn {{#if this.post.user_like}}btn-info{{/if}}" name="like_button"
-                            id={{this.post._id}} style="float: right;">
-                            Like{{#if this.post.user_like}}d{{/if}} {{this.post.like_count}}
-                        </button>
-                    </div>
-                    <form action="/post/addcomment" method="post" id="form_{{@index}}">
-                        <input type="hidden" name="url" value={{../url}}>
-                        <input type="hidden" name="category" value={{../category}}>
-                        <input type="hidden" name="username" value={{../viewername}}>
-                        <input type="hidden" name="post_id" value={{this.post._id}}>
-                        <input type="hidden" name="post_author" value={{this.post.username}}>
-                        <input type="hidden" name="post_body" value='{{this.post.post_body}}'>
+                    <form action="/posts/addcomment" method="post">
+                        <input type="hidden" name="id" value={{this.id}}>
                         <table style='width:100%;'>
                             <tr>
                                 <td>
                                     <input type="text" style='width:130%;' name="comment_body"
-                                        placeholder="Add your comment...." id="input_{{@index}}"
-                                        onkeyup="stoppedTyping({{@index}})">
+                                        placeholder="Add your comment....">
                                 </td>
                                 <td>
-                                    <input type="submit" disabled class="btn btn-primary" value="Comment"
-                                        style="float:right" id="submit_{{@index}}">
+                                    <input type="submit" class="btn btn-primary" value="Comment" style="float:right">
                                 </td>
                             </tr>
-                        </table> --}}
+                        </table>
 
 
                     </form>
                     <div class="row">
-                        {{#each this.post.Comments}}
+                        {{#each this.Comments}}
                         <div class="col-sm-6">
                             <div class="card text-white bg-secondary mb-3"
                                 style="max-width: 23rem; padding: 10px; margin:10px;">
@@ -120,10 +119,6 @@
                         </h3>
                         </p>
 
-                    </div>
-                    <div class="card-footer text-muted">
-                        {{this.post_time}}
-                        <a href="#">{{this.post.username}}</a>
                     </div>
                 </div>
 
