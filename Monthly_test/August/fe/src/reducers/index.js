@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import loginReducer from "./loginReducer";
-// import todoReducer from './todoReducer';
+import postReducer from "./postReducer";
 
 export default combineReducers({
   login_data: loginReducer,
-  // todos: todoReducer,
+  posts: postReducer,
 });
