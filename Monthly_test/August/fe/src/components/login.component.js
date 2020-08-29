@@ -40,8 +40,6 @@ class Login extends Component {
       let user = await httpRequest({
         method: "POST",
         url: "http://localhost:5000/login",
-        // url: '/login',
-        // url:'https://react-demo-login-signup.herokuapp.com/login',
         data: formData,
       });
       if (user.data.error) {

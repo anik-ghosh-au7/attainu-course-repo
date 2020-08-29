@@ -40,8 +40,6 @@ export default class SignUp extends Component {
       let res_data = await httpRequest({
         method: "POST",
         url: "http://localhost:5000/signup",
-        // url: '/signup',
-        //   url:'https://react-demo-login-signup.herokuapp.com/signup',
         data: formData,
       });
       console.log("response data --> ", res_data.data.msg);

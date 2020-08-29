@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const axiosDefaultConfig = {
-  // baseUrl: 'https://react-demo-login-signup.herokuapp.com/',
   baseUrl: "https://localhost:5000/",
   headers: {
     "X-Requested-With": "XMLHttpRequest",
