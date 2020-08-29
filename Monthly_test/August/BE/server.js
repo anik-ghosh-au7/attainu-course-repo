@@ -13,7 +13,7 @@ mongoose
 
 // Importing Routes
 var usersRouter = require("./routes/user.route");
-// var postRouter = require("./routes/post.route");
+var postRouter = require("./routes/post.route");
 
 // creating express instance
 var app = express();
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // setting up main routes
 app.use("/users", usersRouter);
-// app.use("/post", postRouter);
+app.use("/posts", postRouter);
 
 app.get("/*", (req, res) => res.render("index"));
 

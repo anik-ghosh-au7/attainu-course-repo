@@ -31,7 +31,7 @@ const user_controller = {
 
   login: (req, res) => {
     if (req.user) {
-      return res.redirect("/");
+      return res.redirect("/posts/postspage");
     }
     let username = req.body.username;
     let password = req.body.password;
@@ -53,7 +53,8 @@ const user_controller = {
                 "SECRET_KEY"
               );
               res.cookie("awtToken", accessToken);
-              return res.redirect("/");
+              res.cookie("user_name", username);
+              return res.redirect("/posts/postspage");
             } else {
               res.status(401).send("Unauthorized access");
             }
@@ -77,14 +78,15 @@ const user_controller = {
   },
   signPage: (req, res) => {
     if (req.user) {
-      return res.redirect("/");
+      return res.redirect("/users/loginpage");
     }
     res.render("signUp");
   },
 
   logout: (req, res) => {
     res.clearCookie("awtToken");
-    res.redirect("/");
+    res.clearCookie("user_name");
+    res.redirect("/users/loginpage");
   },
 };
 

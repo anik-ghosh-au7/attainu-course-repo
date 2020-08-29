@@ -9,7 +9,7 @@ const authenticateToken = (req, res, next) => {
     next();
   } else {
     jwt.verify(token, "SECRET_KEY", (err, data) => {
-      if (err) return res.status(403).send({ msg: "Unauthorized Forbidden" });
+      if (err) return res.status(403).send({ msg: "Unauthorized Access" });
       req.user = data.name;
       next();
     });
