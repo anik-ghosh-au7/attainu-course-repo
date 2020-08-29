@@ -1,0 +1,5 @@
+
+
+Heroku Deployment Link (BE) - https://august-backend.herokuapp.com/
+
+Heroku Deployment Link (FE) - https://august-frontend.herokuapp.com/
