@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { httpRequest } from "../config";
+import { httpRequest, urls } from "../config";
 import { connect } from "react-redux";
 import { SAVE_USER } from "../reducers/loginReducer";
 
@@ -56,7 +56,7 @@ class Login extends Component {
         user.data.user.email,
         user.data.user.image
       );
-      history.push("/profile");
+      history.push(urls.home);
     } catch (err) {
       console.log("login error --> ", err.message);
       this.setState({ error: err.message });
@@ -101,9 +101,6 @@ class Login extends Component {
                 className="custom-control-input"
                 id="customCheck1"
               />
-              <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
-              </label>
             </div>
           </div>
 
@@ -115,9 +112,6 @@ class Login extends Component {
             Submit
           </button>
           <br />
-          <p className="forgot-password text-right">
-            Forgot <a href="/sign-in">password?</a>
-          </p>
         </form>
       </div>
     );

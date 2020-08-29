@@ -6,7 +6,7 @@ const routes = [
   {
     path: urls.home,
     exact: true,
-    isProtected: false,
+    isProtected: true,
     component: Home,
   },
   {
