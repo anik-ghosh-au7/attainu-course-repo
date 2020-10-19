@@ -1,0 +1,108 @@
+1. How to prevent ddos attack? - 2 marks
+2. Differentiate between public and private ip addresses. - 3 marks
+3. Differentiate between active-active and active-passive load balancer. - 5 marks
+4. What is the CAP theorem? Which database we should choose to build
+https://university.attainu.com/ and why? - 10 marks
+5. Please list linux commands or tools to diagnose your application. Please explain in which
+scenario you will use different commands. - 5 marks
+6. Explain Worker design pattern. Mention where it is used. - 5 marks
+7. Explain round-robin scheduling. Mention where it is used.- 5 marks
+8. What is paging and why do we need it? -5 marks
+9. Explain firewalls and what are the different types of it - 5 marks
+10. Explain caching and where it is used? - 5 marks
+
+
+Ans1.-	The main objective of DDoS attack is to overload a hosting server with continious and multiple requests from same or multiple sources of origin.
+
+The following measures could be taken to prevent DDoS attacks - 
+	a. Monitoring requests when there is an unusual and unexpected increase in traffic.
+	b. Having a good understanding of the traffic trends of the organization.
+	c. Overprovisioning i.e having more server bandwidth than what is actually needed.
+	d. Using Content Distribution Systems to store data on multiple servers.
+
+
+Ans2.-  Both public and private IPs are used as unique identifiers of a machine. While private IPs is used within a local area network (LAN), public IPs are used to communicate outside the network.
+
+The following are the main differences between public and private IPs -
+	a. Private IP addresses of machines connected within a network differ in an uniform manner but no such uniformity is maintanied in case of Public IPs.
+	b. Public IP addresses are alloted by the ICANN and controlled by the Internet Service Provider (ISP) but not for private IPs
+	c. Private IPs can be known bt writing ipconfig in the terminal of a computer but to get the public IP address we have to search it in google.
+
+
+Ans3.-	Load balancing is the process of distribution of a set of tasks over multiple resources in order to make the over-all task more efficient and optimized.
+
+Difference between active-active and active-passive load balancer can be seen based on the following points -
+
+	1. Setup - In active-active setup two adaptive servers are configured horizontally with independent workloads. These serevrs work on primary and secondary nodes individually untill one fails over.
+	In active-passive a single adaptive Server runs either on the primary node or on the secondary node. The Adaptive Server runs on the primary node before a fail over and the secondary node after fail over.
+
+	2. Failover - In active-ctive setup when failover occurs the secondary server takes over the devices, connections and so on from the primary server until the primary server failsback on resumes it activities.
+	In active-passive setup when the primary server failsover the adaptive server and its resorces are alloted to and restarted on the secondary server.
+
+
+Ans4.- CAP stands for Consistency, Availability and Partition Tolerance. The CAP theorem states the trade-off between consistency & availibility when a partition occurs.
+	
+	Consistency - It means when we write or update a data to a distributed system, we shoeld be able to get the exact data from across all nodes of the system whithout any inconsistency.
+
+	Availability - It means the system should be able to extract data or write to any clusters without any errors occuring.
+
+	Partition Tolerance - It means partition between different parts of a cluster in a distributed system not able to communicate to each other but still the overall system is functioning.
+
+	For https://university.attainu.com/ I would prefer to use NoSQL database like MongoDB because it is easily scalable and more readily available.
+
+Ans5.- List of linux commands or tools I mostly use - 
+
+	1. lsof - To find all the opened files and processes along with the one who opened them.
+	2. cd - Known as change directory command, used to change current working directory.
+	3. pwd - Used to get the path to the current working directory.
+	4. ls - List of all the files and folders present inside a directory.
+	5. netstat - Displays network related information like network connections, routing tables, interface statistics, masquerade connections, multicast memberships etc.
+	6. curl - To send http requests directly from terminal
+
+Ans6.- The collection of common solutions to general software development design problems are known worker design patterns.
+
+	Following are the some most efficient ways to solve design problems. Developers used these design pattern during software design. There are currently twenty-three patterns and they are grouped into three categories:
+
+        1. Creations 
+        2. Behavioral
+        3. Structural
+
+ Ans7.- Round-robin scheduling is a pre-emptive algorithm mostly used for multi-tasking wherein each process runs turn by turn with a fixed time-slot (time quanta) in a cyclic way. 
+
+ 	The most popular use of Round-Robin scheduling is in Process and network schedulers in computing.
+
+
+Ans8.- Paging is a memory management scheme used by a machine to retrieve data from the secondary storage to the main memory. 
+
+	In paging, Operating system take data from the secondary storage in a fixed size that is called page and send it main memory. This scheme allows programs to exceed the size of available physical memory. It is a more efficient way to use storage.
+
+
+Ans9. - Firewalls are systems put in place to provide network security. It performs it's duties by filtering any in and out traffic in the system. Firewalls could be both physical and software and are mostly classified as follows -
+
+	1. Packet filtering firewall - This type of firewalls are mainly used inline at junction points, they mainly compare each packets that flows through them to set of pre defined criteria like allowed IP addresses, packet type, port number and other aspects of the packet protocol headers.
+
+	2. Circuit-level gateway - This monitor TCP handshakes and other network protocol session initiation messages across the network as they are established between the local and remote hosts to determine whether the session being initiated is legitimate.
+
+	3. Stateful inspection firewall - This keep track of whether or not that packet is part of an established TCP or other network session.
+
+	4. Application-level gateway (aka proxy firewall) - Often referred to as rpoxy firewall this combines some of the attributes of packet filtering firewalls with those of circuit-level gateways.
+
+	5. Next-generation firewall (NGFW) - This combines packet inspection with stateful inspection and also includes some variety of deep packet inspection, as well as other network security systems, such as intrusion detection/prevention, malware filtering and antivirus.
+
+
+
+Ans10.- A cache is reserved storage that collects temporary data for the help of websites and app to load faster and to reduce number of requests to server. 
+Caching is process of storing, retrieving data from the cache storage.
+
+      There are some downside with cache - 
+      1. They can take up lots of storage space.
+      2. Cache can prevent apps from loading latest version of web page.
+      3. A corrupted cache can make things bad.
+
+
+
+
+
+
+
+
