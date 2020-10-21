@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 
 // style
-import useStyles from "./notification.style";
 import { CLEAR_NOTIFICATION } from "../../redux/actions/notification.action";
 import { connect } from "react-redux";
 
 const Notification = (props) => {
-  const classes = useStyles();
   const { open, msg, severity, clearNotification } = props;
 
   return (
