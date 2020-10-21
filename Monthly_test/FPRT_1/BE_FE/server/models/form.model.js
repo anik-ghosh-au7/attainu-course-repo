@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import moment from "moment";
 
 // making schema
 const formSchema = Schema;
@@ -19,6 +20,10 @@ const form = new formSchema(
         type: String,
       },
     ],
+    createdOn: {
+      type: String,
+      default: moment().format("Do MMM, YYYY"),
+    },
   },
   {
     versionKey: false,

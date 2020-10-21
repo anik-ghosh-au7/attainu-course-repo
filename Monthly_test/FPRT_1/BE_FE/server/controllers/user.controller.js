@@ -6,6 +6,8 @@ import { isEmpty } from "lodash";
 
 // models
 import model from "../models/user.model";
+import formModel from "../models/form.model";
+
 // utils
 import response from "../utils/response";
 
@@ -72,6 +74,33 @@ controller.profile = catchError(async (req, res, next) => {
 
   if (!user) return response(res, null, "invalid data", true, 404);
   response(res, user, "profile update successful", false, 200);
+});
+
+// get responses of form
+controller.getResponses = catchError(async (req, res, next) => {
+  let id = req.body.id;
+
+  // check if id present in user`s forms
+  let index = req.user.forms.findIndex(
+    (ele) => ele.toString() === id.toString()
+  );
+
+  if (index === -1)
+    return response(
+      res,
+      [],
+      "Sorry! You are not author of this form.",
+      true,
+      401
+    );
+
+  // find form
+  let form = await formModel.findById(id);
+
+  // if not found
+  if (!form) return response(res, [], "Sorry! form is not found.", true, 404);
+
+  response(res, form.responses, "Responses fetched successfully", false, 200);
 });
 
 export default controller;
