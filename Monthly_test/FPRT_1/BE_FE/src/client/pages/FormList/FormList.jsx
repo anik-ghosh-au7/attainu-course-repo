@@ -51,11 +51,6 @@ const FormList = ({ setNotification, history }) => {
     getForms();
   }, [getForms]);
 
-  const onClickHandler = (e) => {
-    // changing route
-    history.push("/create");
-  };
-
   return (
     <Fragment>
       <Grid container className={classes.notebook}>
@@ -105,7 +100,7 @@ const FormList = ({ setNotification, history }) => {
                   marginRight={2}
                   my={5}
                   className={classes.list_container}
-                  onClick={onClickHandler}
+                  onClick={() => history.push(`/response?${item._id}`)}
                 >
                   <Card className={classes.root} variant="outlined">
                     <CardContent>
